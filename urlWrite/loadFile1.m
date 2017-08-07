@@ -14,29 +14,25 @@
 ## along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*- 
-## @deftypefn {Function File} {@var{retval} =} salut1 (@var{input1}, @var{input2})
+## @deftypefn {Function File} {@var{retval} =} loadFile1 (@var{input1}, @var{input2})
 ##
 ## @seealso{}
 ## @end deftypefn
 
 ## Author: Mihai C <mhcrnl@localhost.localdomain>
-## Created: 2017-08-07
-##
-# Initializare
-# clear all; close all; clc
-##
-# Functia salut1 accepta un argument de tip string.
-function salut1 (str_input)
-  ##
-  # Verificarea prezentei argumentului
-  if(nargin != 1)
-    print_usage("Functia primeste un argument de tip String.\n")
-  endif
-  ##
-  # Verificarea argumentului functiei
-  if(ischar(str_input))
-    printf("Salut, %s! Bine ai venit!\n", str_input);
-  else
-    error("Functia are ca argument un string.\n");
-  endif
+## Created: 2017-08-06
+
+clear all; clc;
+
+function loadFile1 (url, file)
+  if(nargin != 2)
+    usage("url=string, file=string");
+   endif
+   if(ischar(url) != 0)
+    error("Tipul de date pt url trebuie sa fie string");
+   endif
+  urlwrite(url, file);
+
 endfunction
+
+loadFile1( file);

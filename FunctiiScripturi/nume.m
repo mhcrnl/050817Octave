@@ -14,7 +14,7 @@
 ## along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*- 
-## @deftypefn {Function File} {@var{retval} =} salut1 (@var{input1}, @var{input2})
+## @deftypefn {Function File} {@var{retval} =} nume (@var{input1}, @var{input2})
 ##
 ## @seealso{}
 ## @end deftypefn
@@ -25,18 +25,13 @@
 # Initializare
 # clear all; close all; clc
 ##
-# Functia salut1 accepta un argument de tip string.
-function salut1 (str_input)
+# Functia returneaza numele complet 
+function [retval] = nume ()
   ##
-  # Verificarea prezentei argumentului
-  if(nargin != 1)
-    print_usage("Functia primeste un argument de tip String.\n")
-  endif
-  ##
-  # Verificarea argumentului functiei
-  if(ischar(str_input))
-    printf("Salut, %s! Bine ai venit!\n", str_input);
-  else
-    error("Functia are ca argument un string.\n");
-  endif
+  # Introducere date in aplicatie
+  retval = "";
+  nume = input("Introduceti numele persoanei: ", "s")
+  prenume = input("Introduceti prenumele persoanei: ", "s");
+  retval = [nume, " ", prenume];
+
 endfunction

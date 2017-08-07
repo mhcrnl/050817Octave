@@ -14,29 +14,33 @@
 ## along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*- 
-## @deftypefn {Function File} {@var{retval} =} salut1 (@var{input1}, @var{input2})
+## @deftypefn {Function File} {@var{retval} =} salut (@var{input1}, @var{input2})
 ##
 ## @seealso{}
 ## @end deftypefn
 
 ## Author: Mihai C <mhcrnl@localhost.localdomain>
-## Created: 2017-08-07
+## Created: 2017-08-06
+
+1;
+
+function salut 
+  printf("SALUT!");
+endfunction
+
+function salut1(str)
 ##
-# Initializare
-# clear all; close all; clc
-##
-# Functia salut1 accepta un argument de tip string.
-function salut1 (str_input)
-  ##
-  # Verificarea prezentei argumentului
+# Functia salut1("str") accepta un argument de tip string si afiseaza acest string.
+# salut1("Vasile");
+#
   if(nargin != 1)
-    print_usage("Functia primeste un argument de tip String.\n")
+    #usage("Functia are un argument!");
+    print_usage ()
   endif
-  ##
-  # Verificarea argumentului functiei
-  if(ischar(str_input))
-    printf("Salut, %s! Bine ai venit!\n", str_input);
+  if(ischar(str))
+    printf("SALUT, %s\n", str);
   else
-    error("Functia are ca argument un string.\n");
+    error("Valoarea argument nu este string!");
   endif
+  
 endfunction

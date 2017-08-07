@@ -14,29 +14,35 @@
 ## along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*- 
-## @deftypefn {Function File} {@var{retval} =} salut1 (@var{input1}, @var{input2})
+## @deftypefn {Function File} {@var{retval} =} create_plot (@var{input1}, @var{input2})
 ##
 ## @seealso{}
 ## @end deftypefn
 
 ## Author: Mihai C <mhcrnl@localhost.localdomain>
 ## Created: 2017-08-07
+1; # Script file
 ##
-# Initializare
-# clear all; close all; clc
+# Initializare 
+clear all; close all; clc
+
+x = -10:0.1:10; # Creaza un vector cu valori de la -10 .. 10
+y = sin (x); # Este tot un vector
+
 ##
-# Functia salut1 accepta un argument de tip string.
-function salut1 (str_input)
-  ##
-  # Verificarea prezentei argumentului
-  if(nargin != 1)
-    print_usage("Functia primeste un argument de tip String.\n")
+# Functia creaza un plot din doua inputuri, aceasta este evaluate in consola.
+
+function create_plot (input1, input2)
+
+  if(nargin < 2)
+    print_usage();
+    error("Prea putine argumente cel putin doua sunt necesare.\n");
   endif
-  ##
-  # Verificarea argumentului functiei
-  if(ischar(str_input))
-    printf("Salut, %s! Bine ai venit!\n", str_input);
-  else
-    error("Functia are ca argument un string.\n");
-  endif
+  
+  plot(input1, input2)
+  title("Plot 2D");
+  xlabel("X");
+  ylabel("sin(x)");
 endfunction
+
+#create_plot(x,y);
