@@ -21,15 +21,24 @@
 
 ## Author: mhcrnl <mhcrnl@MHCRNL-PC>
 ## Created: 2017-08-08
-
+pwd
+clear; clc;
 ## Read csv file
 filename = "export.csv";
 #s = load (filename); 
+#rdata = fopen(filename)
+#A = fscanf(rdata, "%s")
 
-
-M = dlmread(filename, " ;,")
+#fclose(rdata)
+#M = dlmread(filename, " ;,")
 #printf("%s", M)
+string_data = fileread(filename);
+#string_data
+cellArray = ostrsplit(string_data,"\t\n")
+x = cellArray{1:2:25}
+#y = cellArray{2:2:25}
+#plot(cellArray{1:2:25},cellArray{2:2:25})
+#plot(x)
+#function [retval] = readCSV (input1, input2)
 
-function [retval] = readCSV (input1, input2)
-
-endfunction
+#endfunction
