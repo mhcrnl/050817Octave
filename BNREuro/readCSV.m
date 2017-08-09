@@ -33,12 +33,14 @@ filename = "export.csv";
 #M = dlmread(filename, " ;,")
 #printf("%s", M)
 string_data = fileread(filename);
-#string_data
-cellArray = ostrsplit(string_data,"\t\n")
-x = cellArray{1:2:25}
-#y = cellArray{2:2:25}
+##
+# Inlocuirea virgulei cu punct
+string_data(string_data==",") ="."
+cellArray = ostrsplit(string_data,";\t\n")
+x = [cellArray{1:2:25}]
+y = [cellArray{2:2:25}]
 #plot(cellArray{1:2:25},cellArray{2:2:25})
-#plot(x)
+#plot(y')
 #function [retval] = readCSV (input1, input2)
 
 #endfunction
