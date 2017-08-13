@@ -5,7 +5,7 @@ Crearea filelelor s-a facut cu comanda:
 edit file_name.
 ```
 ## salut.m
-``` M
+``` octave
 ##
 # Initializare
 clear all; close all; clc
@@ -16,7 +16,7 @@ function salut
 endfunction
 ```
 ## salut1.m
-``` M
+``` octave
 # Initializare
 clear all; close all; clc
 ##
@@ -37,7 +37,7 @@ function salut1 (str_input)
 endfunction
 ```
 ## nume.m
-```
+```octave
 # Initializare
 clear all; close all; clc
 ##
@@ -53,7 +53,7 @@ function [retval] = nume ()
 endfunction
 ```
 ## create_plot.m
-```
+``` octave
 # Initializare 
 clear all; close all; clc
 
